@@ -13,7 +13,7 @@ services:
       db:
         condition: service_healthy
     expose:
-      - "3000"  # Exposed only to other containers on the same network, not to the outside world
+      - "5000"  # Exposed only to other containers on the same network, not to the outside world
     networks:
       - microservice-net
 
@@ -22,7 +22,7 @@ services:
       context: ./frontend
     container_name: frontend
     ports:
-      - "5000:5000"
+      - "3000:3000"
     depends_on:
       - user-service
     networks:
